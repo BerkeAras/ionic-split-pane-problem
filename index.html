@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ionic Split Pane Problem</title>
+
+		<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+		<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+	</head>
+	<body>
+		
+		<ion-app>
+
+			<ion-split-pane content-id="main-content">
+				<ion-menu content-id="main-content">
+					<ion-header class="navbar">
+						<ion-toolbar translucent>
+							<ion-title>Menü</ion-title>
+						</ion-toolbar>
+					</ion-header>
+					<ion-content style="--overflow:hidden;">
+						<ion-list color="light">
+							<ion-menu-toggle>
+								<ion-item detail="true" href="/">
+									<ion-icon name="home" slot="start"></ion-icon>
+									<ion-label>Startseite</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" href="/map" onclick="showLoader();">
+									<ion-icon name="navigate" slot="start"></ion-icon>
+									<ion-label>Karte</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" href="/contact" onclick="showLoader();">
+									<ion-icon name="mail" slot="start"></ion-icon>
+									<ion-label>Kontakt</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" href="/allergene" onclick="showLoader();">
+									<ion-icon name="fast-food" slot="start"></ion-icon>
+									<ion-label>Allergene u. Zusatzstoffe</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" id="my-orders" href="/my-orders" onclick="showLoader();">
+									<ion-icon name="pizza" slot="start"></ion-icon>
+									<ion-label>Meine Bestellungen</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" id="report-problem">
+									<ion-icon name="alert" slot="start"></ion-icon>
+									<ion-label>Problem melden</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+						</ion-list>
+					</ion-content>
+					<ion-footer class="ion-no-border" color="light">
+						<ion-list color="light">
+							<ion-menu-toggle>
+								<ion-item detail="true" href="/account" id="my-account" color="light" onclick="showLoader();">
+									<ion-icon name="person" slot="start"></ion-icon>
+									<ion-label>Mein Account</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" id="log-out" color="light">
+									<ion-icon name="log-out" slot="start"></ion-icon>
+									<ion-label>Abmelden</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" id="log-in" href="/login" color="light" onclick="showLoader();">
+									<ion-icon name="log-in" slot="start"></ion-icon>
+									<ion-label>Anmelden</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" id="register" href="/register" color="light" onclick="showLoader();">
+									<ion-icon name="person-add" slot="start"></ion-icon>
+									<ion-label>Registrieren</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+							<ion-menu-toggle>
+								<ion-item detail="true" color="light" href="/about-the-app" color="light" onclick="showLoader();">
+									<ion-icon name="information-circle" slot="start"></ion-icon>
+									<ion-label>Über die App</ion-label>
+								</ion-item>
+							</ion-menu-toggle>
+						</ion-list>
+					</ion-footer>
+				</ion-menu>
+				<div class="ion-page" id="main-content">
+					<ion-header class="navbar">
+						<ion-toolbar>
+							<ion-buttons slot="start">
+								<ion-menu-button></ion-menu-button>
+							</ion-buttons>
+						</ion-toolbar>
+					</ion-header>
+					<ion-content class="ion-padding" color="light">
+						<h1>Welcome!</h1>
+						<h3>This is an ionic issue.</h3>
+					</ion-content>
+				</div>
+			</ion-split-pane>
+
+		</ion-app>
+
+	</body>
+</html>
